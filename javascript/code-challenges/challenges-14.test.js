@@ -191,14 +191,20 @@ const detectTicTacToeWin = (board) => {
   const diags = Object.values(diagCreator(board));
 
   const testingArr = [...rows, ...cols, ...diags];
+
   let result = null;
-  testingArr.forEach((arr) => {
-    if (arr[0] == arr[1] && arr[0] == arr[2]) {
+  for (let i = 0; i < testingArr.length; i++) {
+    if (
+      testingArr[i][0] == testingArr[i][1] &&
+      testingArr[i][0] == testingArr[i][2] &&
+      testingArr[i][0]
+    ) {
       result = true;
+      break;
     } else {
       result = false;
     }
-  });
+  }
   return result;
 };
 
@@ -209,7 +215,7 @@ function rowCreator(board) {
     2: [],
   };
   board.forEach((item, idx) => {
-    newRow[idx].push(item);
+    newRow[idx] = item;
   });
   return newRow;
 }
@@ -221,20 +227,23 @@ function colCreator(board) {
     2: [],
   };
   board.forEach((n, idx) => {
-    newCols[idx].push(n[idx]);
+    n.forEach((m, i) => {
+      newCols[i].push(m);
+    });
   });
   return newCols;
 }
 
 function diagCreator(board) {
   let newDiags = {
-    newDiag0: [],
-    newDiag1: [],
+    0: [],
+    1: [],
   };
   board.reduce((acc, n, idx) => {
-    newDiags.newDiag0.push(n[idx]);
-    newDiags.newDiag1.push(n[acc]);
+    newDiags[0].push(n[idx]);
+    newDiags[1].push(n[acc]);
     acc--;
+    return acc;
   }, 2);
   return newDiags;
 }
