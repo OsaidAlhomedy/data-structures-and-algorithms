@@ -20,9 +20,9 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-| Number | The Challenge    | Challenge Link                                  |
-| ------ | ---------------- | ----------------------------------------------- |
-| 1      | Reverse an array | [Reverse an array](./java/Challenge1/README.md) |
-|        |                  |                                                 |
-|        |                  |                                                 |
-|        |                  |                                                 |
+| Number | The Challenge                                | Challenge Link                                                              |
+| ------ | -------------------------------------------- | --------------------------------------------------------------------------- |
+| 1      | Reverse an array                             | [Reverse an array](./java/Challenge1/README.md)                             |
+| 2      | Insert and shift an array in middle at index | [Insert and shift an array in middle at index](./java/Challenge1/README.md) |
+|        |                                              |                                                                             |
+|        |                                              |                                                                             |
