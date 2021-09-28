@@ -24,5 +24,5 @@ To run your tests
 | ------ | -------------------------------------------- | --------------------------------------------------------------------------- |
 | 1      | Reverse an array                             | [Reverse an array](./java/Challenge1/README.md)                             |
 | 2      | Insert and shift an array in middle at index | [Insert and shift an array in middle at index](./java/Challenge1/README.md) |
-|        |                                              |                                                                             |
+| 3      | Binary search in a sorted 1D array           | [Binary search in a sorted 1D array](./java/Challenge3/README.md)           |
 |        |                                              |                                                                             |
