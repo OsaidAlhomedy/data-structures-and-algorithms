@@ -5,6 +5,10 @@ public class LinkedList {
   private Node head;
   private int size = 0;
 
+  public int size() {
+    return size;
+  }
+
   public void insert(String value) {
 
     Node newNode = new Node(value);
@@ -28,7 +32,7 @@ public class LinkedList {
   public boolean includes(String value) {
 
     if(size != 0){
-      Node current = head;
+      Node current = head;-
       while(current != null){
         if(Objects.equals(current.getData(), value)){
           return true;
@@ -56,10 +60,6 @@ public class LinkedList {
       stringPrint.append("NULL");
     }
     return stringPrint.toString();
-  }
-
-  public int size() {
-    return size;
   }
 
 }
