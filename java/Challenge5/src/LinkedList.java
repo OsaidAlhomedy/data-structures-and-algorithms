@@ -32,7 +32,7 @@ public class LinkedList {
   public boolean includes(String value) {
 
     if(size != 0){
-      Node current = head;-
+      Node current = head;
       while(current != null){
         if(Objects.equals(current.getData(), value)){
           return true;
