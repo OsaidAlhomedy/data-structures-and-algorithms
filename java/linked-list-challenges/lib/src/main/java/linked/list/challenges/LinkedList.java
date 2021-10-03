@@ -1,3 +1,5 @@
+package linked.list.challenges;
+
 import java.util.Objects;
 
 public class LinkedList {
@@ -63,5 +65,4 @@ public class LinkedList {
     }
     return stringPrint.toString();
   }
-
 }
