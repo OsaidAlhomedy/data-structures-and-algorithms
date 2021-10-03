@@ -7,5 +7,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
+  @Test void linkedListTest (){
+    LinkedList osaidList = new LinkedList();
+    osaidList.insert("Hello");
+    osaidList.insert("My");
+    osaidList.insert("Name");
+    osaidList.insert("Is");
+    osaidList.insert("Slim");
+    osaidList.insert("Shady");
+
+
+    assertEquals(6,osaidList.size());
+    assertTrue(osaidList.includes("Hello"));
+    assertFalse(osaidList.includes("Bruhhh"));
+    assertEquals("{ Hello } --> { My } --> { Name } --> { Is } --> { Slim } --> { Shady } --> NULL" , osaidList.toString());
+
+  }
 
 }
