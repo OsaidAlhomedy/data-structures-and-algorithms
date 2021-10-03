@@ -20,8 +20,60 @@ class LibraryTest {
     assertEquals(6,osaidList.size());
     assertTrue(osaidList.includes("Hello"));
     assertFalse(osaidList.includes("Bruhhh"));
-    assertEquals("{ Hello } --> { My } --> { Name } --> { Is } --> { Slim } --> { Shady } --> NULL" , osaidList.toString());
+    assertEquals("head --> [ Hello ] --> [ My ] --> [ Name ] --> [ Is ] --> [ Slim ] --> [ Shady ] --> X" , osaidList.toString());
 
   }
+
+  @Test void appendingTest (){
+    LinkedList osaidList = new LinkedList();
+    //Testing adding to the end
+    assertEquals(0,osaidList.size());
+    osaidList.append("Hello");
+    assertEquals(1,osaidList.size());
+    System.out.println(osaidList);
+
+  }
+
+  @Test void multipleAppedningTest (){
+    LinkedList osaidList = new LinkedList();
+    //Testing adding to the end
+    assertEquals(0,osaidList.size());
+    osaidList.append("Hello");
+    osaidList.append("I'm");
+    osaidList.append("Osaid");
+    assertEquals(3,osaidList.size());
+    System.out.println(osaidList);
+
+
+  }
+
+  @Test void middleInsertTest (){
+    LinkedList osaidList = new LinkedList();
+    //Testing adding to the end
+    assertEquals(0,osaidList.size());
+    osaidList.append("Hello");
+    osaidList.append("I'm");
+    osaidList.append("Osaid");
+    osaidList.append("Alhomedy");
+    osaidList.insertBefore("Osaid","Student");
+    assertEquals(5,osaidList.size());
+    System.out.println(osaidList);
+
+  }
+
+  @Test void afterInsertTest (){
+    LinkedList osaidList = new LinkedList();
+    //Testing adding to the end
+    assertEquals(0,osaidList.size());
+    osaidList.append("Hello");
+    osaidList.append("I'm");
+    osaidList.append("Osaid");
+    osaidList.append("Alhomedy");
+    osaidList.insertAfter("Osaid","Student");
+    assertEquals(5,osaidList.size());
+    System.out.println(osaidList);
+
+  }
+
 
 }
