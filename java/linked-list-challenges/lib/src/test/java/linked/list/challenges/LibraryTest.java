@@ -24,4 +24,20 @@ class LibraryTest {
 
   }
 
+  @Test void linkedListInserationTest (){
+
+    LinkedList osaidList = new LinkedList();
+    osaidList.append("Hello");
+    osaidList.append("My");
+    osaidList.append("Name");
+    osaidList.append("Is");
+    osaidList.append("Slim");
+    osaidList.append("Shady");
+
+    assertEquals(6,osaidList.size());
+
+
+
+  }
+
 }
