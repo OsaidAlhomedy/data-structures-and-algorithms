@@ -10,7 +10,7 @@ The task is to add more functionality to our linked list from the previous chall
 
 - KthFromEnd method whiteboard : 
 
-![whiteBoard](lib/src/main/resources/kfromEndWhiteBoard.png)
+![whiteBoard](./lib/src/main/resources/kfromEndWhiteBoard.png)
 
 ## Approach & Efficiency
 
