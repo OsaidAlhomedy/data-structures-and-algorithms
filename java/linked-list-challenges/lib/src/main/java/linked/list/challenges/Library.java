@@ -5,22 +5,7 @@ package linked.list.challenges;
 
 public class Library {
   public static void main(String[] args) {
-    LinkedList list = new LinkedList();
-    list.append("Hello");
-    list.append("My");
-    list.append("Name");
-    list.append("Is");
-    System.out.println(list);
 
-    list.insertBefore("My","BRUH");
-
-    System.out.println(list);
-
-    list.insertAfter("My","Osaid");
-
-    System.out.println(list);
-
-    System.out.println(list.size());
 
   }
 }

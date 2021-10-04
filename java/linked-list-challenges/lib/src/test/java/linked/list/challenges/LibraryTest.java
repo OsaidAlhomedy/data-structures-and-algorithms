@@ -3,11 +3,14 @@
  */
 package linked.list.challenges;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-  @Test void linkedListTest (){
+  @Test
+  void linkedListTest() {
     LinkedList osaidList = new LinkedList();
     osaidList.insert("Hello");
     osaidList.insert("My");
@@ -17,61 +20,92 @@ class LibraryTest {
     osaidList.insert("Shady");
 
 
-    assertEquals(6,osaidList.size());
+    assertEquals(6, osaidList.size());
     assertTrue(osaidList.includes("Hello"));
     assertFalse(osaidList.includes("Bruhhh"));
-    assertEquals("head --> [ Hello ] --> [ My ] --> [ Name ] --> [ Is ] --> [ Slim ] --> [ Shady ] --> X" , osaidList.toString());
+    assertEquals("head --> [ Hello ] --> [ My ] --> [ Name ] --> [ Is ] --> [ Slim ] --> [ Shady ] --> X", osaidList.toString());
 
   }
 
-  @Test void appendingTest (){
+  @Test
+  void appendingTest() {
     LinkedList osaidList = new LinkedList();
     //Testing adding to the end
-    assertEquals(0,osaidList.size());
+    assertEquals(0, osaidList.size());
     osaidList.append("Hello");
-    assertEquals(1,osaidList.size());
+    assertEquals(1, osaidList.size());
     System.out.println(osaidList);
 
   }
 
-  @Test void multipleAppedningTest (){
+  @Test
+  void multipleAppedningTest() {
     LinkedList osaidList = new LinkedList();
     //Testing adding to the end
-    assertEquals(0,osaidList.size());
-    osaidList.append("Hello");
-    osaidList.append("I'm");
-    osaidList.append("Osaid");
-    assertEquals(3,osaidList.size());
-    System.out.println(osaidList);
-
-
-  }
-
-  @Test void middleInsertTest (){
-    LinkedList osaidList = new LinkedList();
-    //Testing adding to the end
-    assertEquals(0,osaidList.size());
+    assertEquals(0, osaidList.size());
     osaidList.append("Hello");
     osaidList.append("I'm");
     osaidList.append("Osaid");
-    osaidList.append("Alhomedy");
-    osaidList.insertBefore("Osaid","Student");
-    assertEquals(5,osaidList.size());
+    assertEquals(3, osaidList.size());
     System.out.println(osaidList);
+
 
   }
 
-  @Test void afterInsertTest (){
+  @Test
+  void middleInsertTest() {
     LinkedList osaidList = new LinkedList();
     //Testing adding to the end
-    assertEquals(0,osaidList.size());
+    assertEquals(0, osaidList.size());
     osaidList.append("Hello");
     osaidList.append("I'm");
     osaidList.append("Osaid");
     osaidList.append("Alhomedy");
-    osaidList.insertAfter("Osaid","Student");
-    assertEquals(5,osaidList.size());
+    osaidList.insertBefore("Osaid", "Student");
+    assertEquals(5, osaidList.size());
     System.out.println(osaidList);
+
+  }
+
+  @Test
+  void afterInsertTest() {
+    LinkedList osaidList = new LinkedList();
+    //Testing adding to the end
+    assertEquals(0, osaidList.size());
+    osaidList.append("Hello");
+    osaidList.append("I'm");
+    osaidList.append("Osaid");
+    osaidList.append("Alhomedy");
+    osaidList.insertAfter("Osaid", "Student");
+    assertEquals(5, osaidList.size());
+    System.out.println(osaidList);
+
+  }
+
+  @DisplayName("This test will check for all the tests required for this assignment")
+  @Test
+  void kthFromEndTest() {
+    LinkedList list = new LinkedList();
+
+    list.append("Hello");
+    list.append("My");
+    list.append("Name");
+    list.append("Is");
+    list.append("Osaid");
+
+    LinkedList list2 = new LinkedList();
+    list2.append("Hey");
+
+    assertThrows(IndexOutOfBoundsException.class, () -> list.kthFromEnd(8)); //  k is greater than the length of the linked list
+    assertThrows(IndexOutOfBoundsException.class, () -> list.kthFromEnd(list.size())); //  k and the length of the list are the same
+    assertThrows(IndexOutOfBoundsException.class, () -> list.kthFromEnd(-1)); //  k is not a positive integer
+
+    assertEquals("Hey", list2.kthFromEnd(0)); //  the linked list is of a size 1
+
+    // happy path
+    assertEquals("Osaid", list.kthFromEnd(0));
+    assertEquals("Name", list.kthFromEnd(2));
+    assertEquals("Hello", list.kthFromEnd(4));
 
   }
 

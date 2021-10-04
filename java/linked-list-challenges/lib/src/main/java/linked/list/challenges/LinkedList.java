@@ -106,6 +106,24 @@ public class LinkedList {
 
   }
 
+  public String kthFromEnd(int k) throws IndexOutOfBoundsException {
+
+    if (k >= 0 && k <= this.size - 1) {
+      Node current = head;
+      int counter = 0;
+      int finder = this.size() - 1 - k;
+
+      while(counter < finder){
+        current = current.getNext();
+        counter++;
+      }
+      return current.getData();
+
+    } else {
+      throw new IndexOutOfBoundsException("you're out of bounds my man");
+    }
+  }
+
 
   @Override
   public String toString() {
