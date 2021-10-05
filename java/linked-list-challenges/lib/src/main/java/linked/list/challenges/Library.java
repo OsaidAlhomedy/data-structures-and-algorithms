@@ -3,9 +3,13 @@
  */
 package linked.list.challenges;
 
-public class Library {
-  public static void main(String[] args) {
+import java.util.EmptyStackException;
 
+public class Library {
+  public static void main(String[] args) throws Exception {
 
   }
+
+
+
 }

@@ -5,7 +5,6 @@ package linked.list.challenges;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -34,7 +33,6 @@ class LibraryTest {
     assertEquals(0, osaidList.size());
     osaidList.append("Hello");
     assertEquals(1, osaidList.size());
-    System.out.println(osaidList);
 
   }
 
@@ -47,7 +45,6 @@ class LibraryTest {
     osaidList.append("I'm");
     osaidList.append("Osaid");
     assertEquals(3, osaidList.size());
-    System.out.println(osaidList);
 
 
   }
@@ -63,7 +60,6 @@ class LibraryTest {
     osaidList.append("Alhomedy");
     osaidList.insertBefore("Osaid", "Student");
     assertEquals(5, osaidList.size());
-    System.out.println(osaidList);
 
   }
 
@@ -78,7 +74,6 @@ class LibraryTest {
     osaidList.append("Alhomedy");
     osaidList.insertAfter("Osaid", "Student");
     assertEquals(5, osaidList.size());
-    System.out.println(osaidList);
 
   }
 
@@ -108,6 +103,42 @@ class LibraryTest {
     assertEquals("Hello", list.kthFromEnd(4));
 
   }
+
+  @DisplayName("This test will check for all the tests required for this assignment")
+  @Test
+  void zippingLinkedListTest() {
+
+    LinkedList list1 = new LinkedList();
+    list1.append("1");
+    list1.append("2");
+    list1.append("3");
+
+    LinkedList list2 = new LinkedList();
+    list2.append("7");
+    list2.append("8");
+    list2.append("9");
+
+    LinkedList list3 = new LinkedList(); //Empty list for testing
+    LinkedList list4 = new LinkedList(); //Empty list for testing
+
+    try{
+      String testingString1 = LinkedList.zipLists(list1,list2).toString(); // this will test for two filled lists
+      String testingString2 = LinkedList.zipLists(list1,list3).toString(); // this will test for one filled list and one empty list
+
+      assertEquals("head --> [ 1 ] --> [ 7 ] --> [ 2 ] --> [ 8 ] --> [ 3 ] --> [ 9 ] --> X",testingString1);
+      assertEquals(list1.toString(),testingString2);
+    }catch (Exception e){
+      System.out.println(e.getMessage());
+    }
+
+
+
+
+    assertThrows(Exception.class, ()->LinkedList.zipLists(list3,list4));
+
+
+  }
+
 
 
 }
