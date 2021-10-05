@@ -12,6 +12,10 @@ The task is to add more functionality to our linked list from the previous chall
 
 ![whiteBoard](./lib/src/main/resources/kfromEndWhiteBoard.png)
 
+- zipLists method whiteboard : 
+
+![whiteBoard](./lib/src/main/resources/zipListsWhiteBoard.png)
+
 ## Approach & Efficiency
 
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -19,6 +23,8 @@ The task is to add more functionality to our linked list from the previous chall
 The approach is simple I used two references , current and previous which helped me to determine which comes after and which comes before.
 
 The approach for the kThFromEnd method is to subtract the index from the size as explained in the whiteboard.
+
+The approach for zipping the lists together is explained the whiteboard.
 
 ## Solution
 
