@@ -113,7 +113,7 @@ public class LinkedList {
       int counter = 0;
       int finder = this.size() - 1 - k;
 
-      while(counter < finder){
+      while (counter < finder) {
         current = current.getNext();
         counter++;
       }
@@ -124,6 +124,51 @@ public class LinkedList {
     }
   }
 
+  public Node getHead() {
+    return head;
+  }
+
+  public static LinkedList zipLists(LinkedList list1, LinkedList list2) throws Exception {
+
+    if (list1.size() == 0 && list2.size() == 0) {
+      throw new Exception("Your Lists are empty");
+    } else if (list2.size() == 0) {
+      return list1;
+    } else if (list1.size() == 0) {
+      return list2;
+    } else {
+
+      Node c1 = list1.getHead();
+      Node c2 = list2.getHead();
+      Node t1, t2;
+
+
+      while (c1.getNext() != null && c2 != null) {
+
+        t1 = c1.getNext();
+        t2 = c2.getNext();
+
+        c1.setNext(c2);
+        c2.setNext(t1);
+
+        c1 = t1;
+        c2 = t2;
+
+        list1.size ++;
+
+        if (c1.getNext() == null) {
+          c1.setNext(c2);
+          break;
+        }
+
+      }
+
+      return list1;
+
+    }
+
+
+  }
 
   @Override
   public String toString() {
