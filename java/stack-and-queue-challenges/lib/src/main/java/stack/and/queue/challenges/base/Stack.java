@@ -38,4 +38,14 @@ public class Stack {
     return top == null;
   }
 
+  public Node getTop() {
+    return top;
+  }
+
+  @Override
+  public String toString() {
+    return "Stack{" +
+      "top=" + top +
+      '}';
+  }
 }

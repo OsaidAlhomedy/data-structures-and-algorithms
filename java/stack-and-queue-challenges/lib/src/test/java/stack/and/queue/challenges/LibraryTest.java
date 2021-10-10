@@ -5,6 +5,7 @@ package stack.and.queue.challenges;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import stack.and.queue.challenges.base.PseudoQueue;
 import stack.and.queue.challenges.base.Queue;
 import stack.and.queue.challenges.base.Stack;
 
@@ -56,6 +57,25 @@ class LibraryTest {
     // testing the deQueue Method
     assertEquals("osaid",osaidQueue.deQueue());
     assertEquals("Sad", osaidQueue.peek());
+
+
+  }
+
+
+  @DisplayName("This test is for the pseudo queue")
+  @Test
+  void pseudoQueueTesting() {
+
+    // testing the isEmpty Method
+    PseudoQueue osaidQueue = new PseudoQueue();
+    assertEquals("The stack is empty", osaidQueue.deQueue());
+
+    // testing the enQueue Method
+    osaidQueue.enQueue("Osaid");
+    osaidQueue.enQueue("Sad");
+
+
+    assertEquals("Osaid", osaidQueue.deQueue());
 
 
   }
