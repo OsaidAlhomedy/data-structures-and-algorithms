@@ -1,23 +1,24 @@
 package stack.and.queue.challenges;
 
+import org.checkerframework.checker.units.qual.A;
 import stack.and.queue.challenges.base.PseudoQueue;
 
 public class Library {
 
   public static void main(String[] args) {
 
-    PseudoQueue queue = new PseudoQueue();
+    Animal didi = new Animal("cat");
+    Animal roxy = new Animal("dog");
 
-    queue.enQueue("20");
-    queue.enQueue("15");
-    queue.enQueue("10");
-    queue.enQueue("5");
+    AnimalShelter<Animal> planetZoo = new AnimalShelter<>();
 
-    System.out.println(queue);
 
-    System.out.println(queue.deQueue());
-    System.out.println(queue.deQueue());
-    System.out.println(queue);
+    planetZoo.enQueue(roxy);
+    planetZoo.enQueue(didi);
+
+//    System.out.println(planetZoo.peek());
+
+    System.out.println(planetZoo.deQueue("fish"));
 
 
   }
