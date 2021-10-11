@@ -79,4 +79,34 @@ class LibraryTest {
 
 
   }
+
+  @DisplayName("This test is for the Animal shelter Class")
+  @Test
+  void animalShelterQueueTesting() {
+
+    AnimalShelter<Animal> planetZoo = new AnimalShelter<>();
+
+    Animal didi = new Animal("cat");
+    Animal roxy = new Animal("dog");
+    Animal fulla = new Animal("cat");
+
+    //Testing enqueuing in the shelter
+    planetZoo.enQueue(didi);
+    planetZoo.enQueue(roxy);
+    planetZoo.enQueue(fulla);
+
+    //Testing to peek at the first node
+    assertEquals("cat",planetZoo.peek().getType());
+
+    //Testing to get the first cat
+    assertEquals("cat",planetZoo.deQueue("cat").getType());
+
+    //Testing to get the first dog
+    assertEquals("dog",planetZoo.deQueue("dog").getType());
+
+    //Testing returning null if it is neither cat nor dog
+    assertNull(planetZoo.deQueue("fish"));
+
+
+  }
 }

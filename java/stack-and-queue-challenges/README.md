@@ -6,6 +6,10 @@ A stack is a data structure consists of Nodes where each node reference the next
 
 A queue is a data structure consists of Nodes where it follows the rule First In First Out (FIFO)
 
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![challene12](lib/src/main/resources/challenge12.png)
+
 ## Challenge
 
 <!-- Description of the challenge -->
