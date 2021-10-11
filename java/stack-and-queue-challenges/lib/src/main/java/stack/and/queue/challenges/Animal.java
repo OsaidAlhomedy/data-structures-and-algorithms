@@ -1,7 +1,5 @@
 package stack.and.queue.challenges;
 
-import stack.and.queue.challenges.data.Node;
-
 public class Animal {
 
   private String type;
