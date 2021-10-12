@@ -31,7 +31,7 @@ class LibraryTest {
     assertFalse(osaidStack.isEmpty());
 
     // testing the pop Method
-    assertEquals("Sad",osaidStack.pop());
+    assertEquals("Sad", osaidStack.pop());
     assertEquals("osaid", osaidStack.peek());
 
   }
@@ -55,7 +55,7 @@ class LibraryTest {
     assertFalse(osaidQueue.isEmpty());
 
     // testing the deQueue Method
-    assertEquals("osaid",osaidQueue.deQueue());
+    assertEquals("osaid", osaidQueue.deQueue());
     assertEquals("Sad", osaidQueue.peek());
 
 
@@ -96,17 +96,41 @@ class LibraryTest {
     planetZoo.enQueue(fulla);
 
     //Testing to peek at the first node
-    assertEquals("cat",planetZoo.peek().getType());
+    assertEquals("cat", planetZoo.peek().getType());
 
     //Testing to get the first cat
-    assertEquals("cat",planetZoo.deQueue("cat").getType());
+    assertEquals("cat", planetZoo.deQueue("cat").getType());
 
     //Testing to get the first dog
-    assertEquals("dog",planetZoo.deQueue("dog").getType());
+    assertEquals("dog", planetZoo.deQueue("dog").getType());
 
     //Testing returning null if it is neither cat nor dog
     assertNull(planetZoo.deQueue("fish"));
 
 
   }
+
+  @DisplayName("This test is for the Validator")
+  @Test
+  void validatorTesting() {
+    System.out.println(Validator.validateBrackets(""));
+    System.out.println(Validator.validateBrackets("{}{Code}[Fellows](())"));
+
+    //TEST THE EDGE CASES
+    assertFalse(Validator.validateBrackets(""));
+    assertFalse(Validator.validateBrackets(null));
+    assertFalse(Validator.validateBrackets(")"));
+
+    //TEST TRUE
+    assertTrue(Validator.validateBrackets("{}(){}"));
+    assertTrue(Validator.validateBrackets("()[[Extra Characters]]"));
+    assertTrue(Validator.validateBrackets("{}{Code}[Fellows](())"));
+
+    //TEST False
+    assertFalse(Validator.validateBrackets("[({}]"));
+    assertFalse(Validator.validateBrackets("(]("));
+
+  }
+
+
 }
