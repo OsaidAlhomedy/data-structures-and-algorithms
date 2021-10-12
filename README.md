@@ -26,4 +26,4 @@ To run your tests
 | 2             | Insert and shift an array in middle at index   | [Insert and shift an array in middle at index](./java/Challenge1/README.md) |
 | 3             | Binary search in a sorted 1D array             | [Binary search in a sorted 1D array](./java/Challenge3/README.md)           |
 | 5,6,7,8       | Linked List Implementation                     | [Linked List Implementation](./java/linked-list-challenges/README.md)       |
-| 9,10,11,12,13 | Stack And Queues implementation and challenges | [Stack And Queues](./java/linked-list-challenges/README.md)                 |
+| 9,10,11,12,13 | Stack And Queues implementation and challenges | [Stack And Queues](./java/stack-and-queue-challenges/README.md)                 |
