@@ -6,7 +6,6 @@ package trees.chaleenges;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import trees.chaleenges.base.BinarySearchTree;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -53,6 +52,23 @@ class LibraryTest {
 
     // postOrder traverse
     assertEquals("[1, 6, 3, 14, 10, 8]",bst.postOrder().toString());
+  }
+
+
+  @DisplayName("Testing containing")
+  @Test void containBinarySearchTree(){
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    bst.add(8);
+    bst.add(3);
+    bst.add(10);
+    bst.add(1);
+    bst.add(6);
+    bst.add(14);
+
+    assertTrue(bst.contains(1));
+    assertFalse(bst.contains(7));
+    assertTrue(bst.contains(14));
+    assertFalse(bst.contains(100));
   }
 
 }

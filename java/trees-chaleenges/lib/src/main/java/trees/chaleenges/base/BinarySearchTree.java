@@ -4,7 +4,7 @@ import trees.chaleenges.data.Node;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> implements Comparable<BinarySearchTree<T>> {
 
-  private boolean validator = false;
+  private boolean validator;
 
   public void add(T input) {
 
@@ -42,6 +42,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> imp
   }
 
   public boolean contains(T input) {
+    validator = false;
     containsHelper(input, root);
     return validator;
   }
@@ -49,9 +50,8 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> imp
   private void containsHelper(T input, Node<T> node) {
 
     if (node.getData() == input) {
-      this.validator = true;
+      validator = true;
     }
-
     if (node.getLeft() != null) {
       containsHelper(input, node.getLeft());
     }
@@ -59,6 +59,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> imp
     if (node.getRight() != null) {
       containsHelper(input, node.getRight());
     }
+
   }
 
   public Node<T> getRoot() {
