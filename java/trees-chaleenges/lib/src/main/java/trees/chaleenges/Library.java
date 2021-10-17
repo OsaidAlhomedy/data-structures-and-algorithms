@@ -7,12 +7,5 @@ import trees.chaleenges.base.BinarySearchTree;
 
 public class Library {
   public static void main(String[] args) {
-    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-    bst.add(10);
-    bst.add(5);
-    bst.add(20);
-    bst.add(15);
-
-    System.out.println(bst.preOrder());
   }
 }

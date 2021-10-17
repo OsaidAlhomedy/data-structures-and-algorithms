@@ -5,7 +5,7 @@ import trees.chaleenges.data.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BinaryTree<T> {
+public abstract class BinaryTree<T extends Comparable<T>> {
 
   protected Node<T> root;
 
@@ -37,7 +37,22 @@ public abstract class BinaryTree<T> {
     return list;
   }
 
+  public int max() {
+    List<T> list = preOrder();
+    if (list == null) {return 0;}
+
+    Integer maximum = 0;
+    for (T integer : list) {
+        if (integer.compareTo((T) maximum) > 0) {
+          maximum = (Integer) integer;
+        }
+    }
+
+    return maximum;
+  }
+
 /////////////////////////////////////////////////////////////
+
 
   private void preOrderHelper(Node<T> rootArg, List<T> list) {
 
