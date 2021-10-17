@@ -6,36 +6,41 @@ package trees.chaleenges;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import trees.chaleenges.base.BinarySearchTree;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
 
-    @DisplayName("Testing the instantiation of a BST")
-    @Test void instantiateBinarySearchTree(){
-      BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-      assertNotNull(bst);
-    }
+  @DisplayName("Testing the instantiation of a BST")
+  @Test
+  void instantiateBinarySearchTree() {
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    assertNotNull(bst);
+  }
 
   @DisplayName("Testing the insertion of the first node")
-  @Test void rootBinarySearchTree(){
+  @Test
+  void rootBinarySearchTree() {
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
     bst.add(10);
-    assertEquals(10,bst.getRoot().getData());
+    assertEquals(10, bst.getRoot().getData());
   }
 
   @DisplayName("Testing the insertion of the left and right nodes")
-  @Test void leftAndRightBinarySearchTree(){
+  @Test
+  void leftAndRightBinarySearchTree() {
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
     bst.add(10);
     bst.add(5);
     bst.add(15);
-    assertEquals(10,bst.getRoot().getData());
-    assertEquals(5,bst.getRoot().getLeft().getData());
-    assertEquals(15,bst.getRoot().getRight().getData());
+    assertEquals(10, bst.getRoot().getData());
+    assertEquals(5, bst.getRoot().getLeft().getData());
+    assertEquals(15, bst.getRoot().getRight().getData());
   }
 
   @DisplayName("Testing the traversals")
-  @Test void traverseBinarySearchTree(){
+  @Test
+  void traverseBinarySearchTree() {
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
     bst.add(8);
     bst.add(3);
@@ -45,18 +50,19 @@ class LibraryTest {
     bst.add(14);
 
     // preOrder traverse
-    assertEquals("[8, 3, 1, 6, 10, 14]",bst.preOrder().toString());
+    assertEquals("[8, 3, 1, 6, 10, 14]", bst.preOrder().toString());
 
     // inOrder traverse
-    assertEquals("[1, 3, 6, 8, 10, 14]",bst.inOrder().toString());
+    assertEquals("[1, 3, 6, 8, 10, 14]", bst.inOrder().toString());
 
     // postOrder traverse
-    assertEquals("[1, 6, 3, 14, 10, 8]",bst.postOrder().toString());
+    assertEquals("[1, 6, 3, 14, 10, 8]", bst.postOrder().toString());
   }
 
 
   @DisplayName("Testing containing")
-  @Test void containBinarySearchTree(){
+  @Test
+  void containBinarySearchTree() {
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
     bst.add(8);
     bst.add(3);
@@ -69,6 +75,25 @@ class LibraryTest {
     assertFalse(bst.contains(7));
     assertTrue(bst.contains(14));
     assertFalse(bst.contains(100));
+  }
+
+  @DisplayName("Testing maximum value")
+  @Test
+  void maxBinaryTreeValue() {
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    bst.add(10);
+    bst.add(5);
+    bst.add(20);
+    bst.add(50);
+    bst.add(1);
+
+    assertEquals(50, bst.max());
+
+    bst.add(51);
+
+    assertEquals(51, bst.max());
+
+
   }
 
 }
