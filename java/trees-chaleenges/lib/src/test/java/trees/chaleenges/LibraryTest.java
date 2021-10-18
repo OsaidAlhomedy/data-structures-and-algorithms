@@ -6,6 +6,7 @@ package trees.chaleenges;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import trees.chaleenges.base.BinarySearchTree;
+import trees.chaleenges.base.BinaryTree;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -96,4 +97,23 @@ class LibraryTest {
 
   }
 
+  @DisplayName("Testing maximum value")
+  @Test
+  void breadthFirstTree() {
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+    tree.add(10);
+    tree.add(5);
+    tree.add(15);
+    tree.add(4);
+    tree.add(7);
+    tree.add(14);
+    tree.add(20);
+
+    assertEquals("[10, 5, 15, 4, 7, 14, 20]",BinaryTree.breadthFirst(tree).toString());
+
+    tree.add(30);
+    tree.add(3);
+    assertEquals("[10, 5, 15, 4, 7, 14, 20, 3, 30]",BinaryTree.breadthFirst(tree).toString());
+  }
 }

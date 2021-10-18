@@ -1,14 +1,47 @@
 package trees.chaleenges.base;
 
 import trees.chaleenges.data.Node;
-
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public abstract class BinaryTree<T extends Comparable<T>> {
 
   protected Node<T> root;
 
+
+  public static List<Integer> breadthFirst(BinaryTree<Integer> tree) {
+
+    List<Integer> list = new ArrayList<>();
+    Queue<Node<Integer>> queue = new LinkedList<>();
+
+    queue.add(tree.root);
+
+    while (!queue.isEmpty()) {
+
+      Node<Integer> temp = queue.remove();
+      list.add(temp.getData());
+
+      if (temp.getLeft() != null) {
+        queue.add(temp.getLeft());
+      }
+
+      if (temp.getRight() != null) {
+        queue.add(temp.getRight());
+      }
+    }
+
+    return list;
+
+  }
+
+  private static void breadthFirstHelper(Node<Integer> current, List<Integer> list) {
+
+
+  }
+
+  /////////////////////////////////
 
   public List<T> preOrder() {
     if (isEmpty()) {
@@ -39,20 +72,21 @@ public abstract class BinaryTree<T extends Comparable<T>> {
 
   public int max() {
     List<T> list = preOrder();
-    if (list == null) {return 0;}
+    if (list == null) {
+      return 0;
+    }
 
     Integer maximum = 0;
     for (T integer : list) {
-        if (integer.compareTo((T) maximum) > 0) {
-          maximum = (Integer) integer;
-        }
+      if (integer.compareTo((T) maximum) > 0) {
+        maximum = (Integer) integer;
+      }
     }
 
     return maximum;
   }
 
-/////////////////////////////////////////////////////////////
-
+  ///////////////////////////////////
 
   private void preOrderHelper(Node<T> rootArg, List<T> list) {
 
@@ -93,7 +127,6 @@ public abstract class BinaryTree<T extends Comparable<T>> {
 
     list.add(rootArg.getData());
   }
-
 
   public boolean isEmpty() {
     return root == null;
