@@ -11,36 +11,6 @@ public abstract class BinaryTree<T extends Comparable<T>> {
   protected Node<T> root;
 
 
-  public static List<Integer> breadthFirst(BinaryTree<Integer> tree) {
-
-    List<Integer> list = new ArrayList<>();
-    Queue<Node<Integer>> queue = new LinkedList<>();
-
-    queue.add(tree.root);
-
-    while (!queue.isEmpty()) {
-
-      Node<Integer> temp = queue.remove();
-      list.add(temp.getData());
-
-      if (temp.getLeft() != null) {
-        queue.add(temp.getLeft());
-      }
-
-      if (temp.getRight() != null) {
-        queue.add(temp.getRight());
-      }
-    }
-
-    return list;
-
-  }
-
-  private static void breadthFirstHelper(Node<Integer> current, List<Integer> list) {
-
-
-  }
-
   /////////////////////////////////
 
   public List<T> preOrder() {
@@ -84,6 +54,52 @@ public abstract class BinaryTree<T extends Comparable<T>> {
     }
 
     return maximum;
+  }
+
+  public static List<Integer> breadthFirst(BinaryTree<Integer> tree) {
+
+    List<Integer> list = new ArrayList<>();
+    Queue<Node<Integer>> queue = new LinkedList<>();
+
+    queue.add(tree.root);
+
+    while (!queue.isEmpty()) {
+
+      Node<Integer> temp = queue.remove();
+      list.add(temp.getData());
+
+      if (temp.getLeft() != null) {
+        queue.add(temp.getLeft());
+      }
+
+      if (temp.getRight() != null) {
+        queue.add(temp.getRight());
+      }
+    }
+
+    return list;
+
+  }
+
+  public static boolean fileChecker(BinaryTree<Integer> bt1 , BinaryTree<Integer> bt2){
+
+    List<Node<Integer>> list1 = new ArrayList<>();
+    List<Node<Integer>> list2= new ArrayList<>();
+
+    fileCheckerHelper(bt1.root,list1);
+    fileCheckerHelper(bt2.root,list2);
+
+    return list1.size() == list2.size();
+
+  }
+
+  private static void fileCheckerHelper(Node<Integer> node,List<Node<Integer>> list){
+
+    if(node.getLeft() == null && node.getRight() == null) list.add(node);
+
+    if(node.getLeft() !=null) fileCheckerHelper(node.getLeft(),list);
+
+    if(node.getRight() !=null) fileCheckerHelper(node.getRight(),list);
   }
 
   ///////////////////////////////////

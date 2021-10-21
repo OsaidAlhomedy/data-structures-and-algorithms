@@ -9,6 +9,25 @@ import trees.chaleenges.base.BinaryTree;
 public class Library {
   public static void main(String[] args) {
 
+    BinarySearchTree<Integer> binarySearchTree1 = new BinarySearchTree<>();
+    BinarySearchTree<Integer> binarySearchTree2 = new BinarySearchTree<>();
+
+    binarySearchTree1.add(4);
+    binarySearchTree1.add(6);
+    binarySearchTree1.add(2);
+    binarySearchTree1.add(1);
+    binarySearchTree1.add(3);
+    binarySearchTree1.add(7);
+
+
+    binarySearchTree2.add(4);
+    binarySearchTree2.add(6);
+    binarySearchTree2.add(2);
+    binarySearchTree2.add(1);
+    binarySearchTree2.add(3);
+    binarySearchTree2.add(7);
+
+    System.out.println(BinaryTree.fileChecker(binarySearchTree1,binarySearchTree2));
 
 
   }
