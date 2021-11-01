@@ -27,4 +27,5 @@ To run your tests
 | 3             | Binary search in a sorted 1D array             | [Binary search in a sorted 1D array](./java/Challenge3/README.md)           |
 | 5,6,7,8       | Linked List Implementation                     | [Linked List Implementation](./java/linked-list-challenges/README.md)       |
 | 9,10,11,12,13 | Stack And Queues implementation and challenges | [Stack And Queues](./java/stack-and-queue-challenges/README.md)             |
-| 26            | Insertion Sort                                 | [Insertion Sort](./android/InsertionSort/README.md)               |
+| 26            | Insertion Sort                                 | [Insertion Sort](./android/InsertionSort/README.md)                         |
+| 27            | Merge Sort                                     | [Merge Sort](./android/mergeSort/README.md)                             |

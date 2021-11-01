@@ -2,13 +2,13 @@
 
 <!-- Description of the challenge -->
 
-Trace the Insertion Sort algorithm by stepping through the process using a white board blog
+Trace the Merge Sort algorithm by stepping through the process using a white board blog
 
 ## Whiteboard Process
 
 <!-- Embedded whiteboard image -->
 
-![wb](./lib/src/main/resources/insertionWB.png)
+![whiteboard](./lib/src/main/resources/whiteBoard.png)
 
 ## Approach & Efficiency
 
