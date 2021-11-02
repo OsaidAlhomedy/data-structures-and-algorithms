@@ -29,3 +29,4 @@ To run your tests
 | 9,10,11,12,13 | Stack And Queues implementation and challenges | [Stack And Queues](./java/stack-and-queue-challenges/README.md)             |
 | 26            | Insertion Sort                                 | [Insertion Sort](./android/InsertionSort/README.md)                         |
 | 27            | Merge Sort                                     | [Merge Sort](./android/mergeSort/README.md)                             |
+| 28            | Quick Sort                                     | [Merge Sort](./android/quickSort/README.md)                             |
