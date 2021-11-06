@@ -26,7 +26,7 @@ public class HashTable<K, T> {
     return Objects.hashCode(key);
   }
 
-  private int hash(K key) {
+  public int hash(K key) {
     int hashCode = hashCode(key);
     int index = hashCode % numBuckets;
     index = index < 0 ? index * -1 : index;
