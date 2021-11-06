@@ -1,18 +1,18 @@
 package hashTable.base;
 
-import hashTable.data.hashNode;
+import hashTable.data.HashNode;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class hashTable<K, T> {
+public class HashTable<K, T> {
 
   private int numBuckets;
   private int size;
 
-  private ArrayList<hashNode<K, T>> bucketArray;
+  private ArrayList<HashNode<K, T>> bucketArray;
 
-  public hashTable() {
+  public HashTable() {
     bucketArray = new ArrayList<>();
     numBuckets = 10;
     size = 0;
@@ -39,7 +39,7 @@ public class hashTable<K, T> {
     int bucketIndex = hash(key);
     int hashCode = hashCode(key);
 
-    hashNode<K, T> head = bucketArray.get(bucketIndex);
+    HashNode<K, T> head = bucketArray.get(bucketIndex);
 
 
     while (head != null) {
@@ -55,13 +55,13 @@ public class hashTable<K, T> {
 
     size++;
     head = bucketArray.get(bucketIndex);
-    hashNode<K, T> newNode = new hashNode<>(key, value);
+    HashNode<K, T> newNode = new HashNode<>(key, value);
     newNode.next = head;
     bucketArray.set(bucketIndex, newNode);
 
 
     if ((1.0 * size) / numBuckets >= 0.7) {
-      ArrayList<hashNode<K, T>> temp = bucketArray;
+      ArrayList<HashNode<K, T>> temp = bucketArray;
       bucketArray = new ArrayList<>();
       numBuckets = 2 * numBuckets;
       size = 0;
@@ -72,7 +72,7 @@ public class hashTable<K, T> {
       }
 
 
-      for (hashNode<K, T> headNode : temp) {
+      for (HashNode<K, T> headNode : temp) {
         while (headNode != null) {
           add(headNode.key, headNode.data);
           headNode = headNode.next;
@@ -85,7 +85,7 @@ public class hashTable<K, T> {
     int bucketIndex = hash(key);
     int hashCode = hashCode(key);
 
-    hashNode<K, T> head = bucketArray.get(bucketIndex);
+    HashNode<K, T> head = bucketArray.get(bucketIndex);
 
 
     while (head != null) {
@@ -103,7 +103,7 @@ public class hashTable<K, T> {
   public boolean contains(K key) {
     int bucketIndex = hash(key);
 
-    hashNode<K, T> head = bucketArray.get(bucketIndex);
+    HashNode<K, T> head = bucketArray.get(bucketIndex);
 
 
     while (head != null) {
