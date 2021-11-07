@@ -3,6 +3,8 @@ package hashTable.base;
 import hashTable.data.HashNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.Objects;
 
 public class HashTable<K, T> {
@@ -122,4 +124,34 @@ public class HashTable<K, T> {
     return size;
   }
 
+
+  public String repeatedWord(String string) {
+
+    String filteredString = string.replaceAll("[\\,\\.\\–]", "");
+    String[] arrayString = filteredString.split(" ");
+
+    for (String item : arrayString) {
+      item = item.toLowerCase(Locale.ROOT);
+      int bucketIndex = hash((K) item);
+
+      HashNode<K, T> head = bucketArray.get(bucketIndex);
+
+      while (head != null) {
+        if (head.key.equals(item)) {
+          return item;
+        }
+        head = head.next;
+      }
+      head = bucketArray.get(bucketIndex);
+      HashNode<K, T> newNode = new HashNode<>((K) item, (T) item);
+      newNode.next = head;
+      bucketArray.set(bucketIndex, newNode);
+    }
+
+    return null;
+
+  }
 }
+
+
+
