@@ -30,3 +30,36 @@ Space Complexity : O(n)
 3. contains(K) : this method takes a key and returns a boolean depending if the key is in the table or not
 
 4. hash(K) : this method takes a key and returns an integer representing the index location in the array of that key
+
+5. repeatedWord()
+
+---
+
+# repeatedWord()
+
+## Challenge Summary
+
+<!-- Description of the challenge -->
+
+This method takes in a string and check if there is any duplicate word inside it, if yes it returns the word , if not it will return null.
+
+### Whiteboard Process
+
+<!-- Embedded whiteboard image -->
+
+![whtieBoard](lib/src/main/resources/whiteBoardRepeatedWord.png)
+
+### Approach & Efficiency
+
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+The approach is really simple I will do almost the same as the add method and check for the duplicate
+
+Time complexity : O(n^2)
+Space Complexity : O(n)
+
+### Solution
+
+<!-- Show how to run your code, and examples of it in action -->
+
+In order to use the api you just create a new instance of the hash table and then call the method and send the string with its arguments

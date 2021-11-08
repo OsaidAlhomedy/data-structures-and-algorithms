@@ -28,5 +28,6 @@ To run your tests
 | 5,6,7,8       | Linked List Implementation                     | [Linked List Implementation](./java/linked-list-challenges/README.md)       |
 | 9,10,11,12,13 | Stack And Queues implementation and challenges | [Stack And Queues](./java/stack-and-queue-challenges/README.md)             |
 | 26            | Insertion Sort                                 | [Insertion Sort](./android/InsertionSort/README.md)                         |
-| 27            | Merge Sort                                     | [Merge Sort](./android/mergeSort/README.md)                             |
-| 28            | Quick Sort                                     | [Merge Sort](./android/quickSort/README.md)                             |
+| 27            | Merge Sort                                     | [Merge Sort](./android/mergeSort/README.md)                                 |
+| 28            | Quick Sort                                     | [Merge Sort](./android/quickSort/README.md)                                 |
+| 29            | Hash Tables - Repeated-Word                    | [Repeated-Word](./android/hashTable/README.md)                              |
