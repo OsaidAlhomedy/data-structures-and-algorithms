@@ -63,3 +63,34 @@ Space Complexity : O(n)
 <!-- Show how to run your code, and examples of it in action -->
 
 In order to use the api you just create a new instance of the hash table and then call the method and send the string with its arguments
+
+---
+
+# joinLeft()
+
+## Challenge Summary
+
+<!-- Description of the challenge -->
+
+This method takes in 2 hash tables and apply the left join logic then return the results as a matrix of strings.
+
+### Whiteboard Process
+
+<!-- Embedded whiteboard image -->
+
+![whtieBoard](lib/src/main/resources/leftJoinWB.png)
+
+### Approach & Efficiency
+
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+The approach is simply adding items to the result array and returning it in the end
+
+Time complexity : O(n^2)
+Space Complexity : O(n)
+
+### Solution
+
+<!-- Show how to run your code, and examples of it in action -->
+
+In order to use the api you just call it as a static method for the class and insert the 2 hash tables in the parameters.
