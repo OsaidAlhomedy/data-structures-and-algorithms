@@ -10,7 +10,6 @@ public abstract class BinaryTree<T extends Comparable<T>> {
 
   protected Node<T> root;
 
-
   public static List<Integer> breadthFirst(BinaryTree<Integer> tree) {
 
     List<Integer> list = new ArrayList<>();
