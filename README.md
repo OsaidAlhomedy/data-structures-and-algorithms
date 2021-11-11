@@ -31,3 +31,5 @@ To run your tests
 | 27            | Merge Sort                                     | [Merge Sort](./android/mergeSort/README.md)                                 |
 | 28            | Quick Sort                                     | [Merge Sort](./android/quickSort/README.md)                                 |
 | 29            | Hash Tables - Repeated-Word                    | [Repeated-Word](./android/hashTable/README.md)                              |
+| 33            | Hash Tables - hashmap-left-join                | [Repeated-Word](./android/hashTable/README.md)                              |
+

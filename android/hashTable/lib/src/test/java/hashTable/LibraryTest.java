@@ -56,4 +56,29 @@ class LibraryTest {
     assertNull(hashTable.repeatedWord(noDuplicatedString));
   }
 
+  @Test
+  public void leftJoinTest() {
+
+    //Testing the happy path
+
+    HashTable<String,String> ht1 = new HashTable<>();
+    ht1.add("osaid","student");
+    ht1.add("ammar","assistant");
+    ht1.add("jason","instructor");
+
+    HashTable<String,String> ht2 = new HashTable<>();
+    ht2.add("osaid","24");
+    ht2.add("naim","26");
+    ht2.add("jason","33");
+
+    assertEquals("[[ammar, assistant, null], [osaid, student, 24], [jason, instructor, 33]]",HashTable.leftJoin(ht1,ht2).toString());
+
+    // Testing edge cases
+    HashTable<String,String> ht3 = new HashTable<>();
+    HashTable<String,String> ht4 = new HashTable<>();
+
+    assertEquals("[]",HashTable.leftJoin(ht3,ht4).toString());
+
+  }
+
 }

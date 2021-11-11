@@ -2,10 +2,7 @@ package hashTable.base;
 
 import hashTable.data.HashNode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.Objects;
+import java.util.*;
 
 public class HashTable<K, T> {
 
@@ -22,6 +19,33 @@ public class HashTable<K, T> {
     for (int index = 0; index < numBuckets; index++) {
       bucketArray.add(null);
     }
+  }
+
+  public static ArrayList<ArrayList<String>> leftJoin(HashTable<String, String> ht1, HashTable<String, String> ht2) {
+
+    ArrayList<ArrayList<String>> results = new ArrayList<>();
+
+    for (HashNode<String, String> head : ht1.bucketArray) {
+
+      ArrayList<String> insideList = new ArrayList<>();
+      while (head != null) {
+        insideList.add(head.key);
+        insideList.add(head.data);
+        results.add(insideList);
+        head = head.next;
+      }
+
+    }
+
+
+    for (ArrayList<String> result : results) {
+      String name = result.get(0);
+      result.add(ht2.get(name));
+    }
+
+    return results;
+
+
   }
 
   private int hashCode(K key) {
@@ -124,7 +148,6 @@ public class HashTable<K, T> {
     return size;
   }
 
-
   public String repeatedWord(String string) {
 
     String filteredString = string.replaceAll("[\\,\\.\\–]", "");
@@ -151,6 +174,8 @@ public class HashTable<K, T> {
     return null;
 
   }
+
+
 }
 
 
