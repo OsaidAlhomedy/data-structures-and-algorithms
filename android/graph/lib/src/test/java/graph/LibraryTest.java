@@ -3,12 +3,81 @@
  */
 package graph;
 
+import graph.base.Graph;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
-        Library classUnderTest = new Library();
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
-    }
+
+  @DisplayName("adding nodes testing")
+  @Test
+  void graphAddNodeTest() {
+    Graph<String> graph = new Graph<>();
+
+    // adding new nodes
+    graph.addNode("osaid");
+    graph.addNode("rahaf");
+    graph.addNode("mohammad");
+    assertEquals(3, graph.size());
+
+    //adding existing nodes
+    graph.addNode("osaid");
+    graph.addNode("rahaf");
+    assertEquals(3, graph.size());
+
+  }
+
+  @DisplayName("adding an edge between 2 nodes")
+  @Test
+  void graphAddEdgeTest() {
+    Graph<String> graph = new Graph<>();
+    graph.addNode("osaid");
+    graph.addNode("rahaf");
+    // adding edge testing
+    graph.addEdge("osaid", "rahaf");
+    assertEquals("[rahaf]", graph.getNeighbors("osaid").toString());
+
+    // adding existing edge testing
+    graph.addEdge("osaid", "rahaf");
+    assertEquals("[rahaf]", graph.getNeighbors("osaid").toString());
+
+  }
+
+  @DisplayName("graph size test")
+  @Test
+  void graphSize() {
+    Graph<String> graph = new Graph<>();
+    // empty graph
+    assertEquals(0, graph.size());
+
+    graph.addNode("Osaid");
+    graph.addNode("Tareq");
+    graph.addNode("Mohammad");
+
+    assertEquals(3, graph.size());
+
+  }
+
+  @DisplayName("adding the same node as an edge")
+  @Test
+  void graphAddEdgeSameNode() {
+    Graph<String> graph = new Graph<>();
+    graph.addNode("osaid");
+    graph.addNode("rahaf");
+    // adding edge testing
+    graph.addEdge("osaid", "osaid");
+    assertEquals("[osaid]", graph.getNeighbors("osaid").toString());
+
+  }
+
+  @DisplayName("empty graph should returns null")
+  @Test
+  void graphEmptyGraph() {
+    Graph<String> graph = new Graph<>();
+    assertNull(graph.getNodes());
+
+  }
+
 }
