@@ -80,4 +80,36 @@ class LibraryTest {
 
   }
 
+  @DisplayName("returns a list of all the nodes using breadth first logic")
+  @Test
+  void graphBreadthFirst() {
+
+    Graph<String> graph = new Graph<>();
+    // adding the nodes
+    graph.addNode("osaid");
+    graph.addNode("rahaf");
+    graph.addNode("mohammad");
+    graph.addNode("tareq");
+    graph.addNode("ammar");
+
+    // ADDING THE EDGES
+
+    //happy path
+    graph.addEdge("osaid", "rahaf");
+    assertEquals("[osaid, rahaf]", graph.breadthFirst("osaid").toString());
+
+    // adding more stuff
+    graph.addEdge("osaid", "tareq");
+    graph.addEdge("tareq", "ammar");
+    assertEquals("[osaid, rahaf, tareq, ammar]", graph.breadthFirst("osaid").toString());
+
+    // adding duplicated edge should return the same as above
+    graph.addEdge("ammar","rahaf");
+    assertEquals("[osaid, rahaf, tareq, ammar]", graph.breadthFirst("osaid").toString());
+
+    // edge cases
+    assertThrows(IllegalArgumentException.class, () -> graph.breadthFirst("nobody"));
+  }
+
+
 }
