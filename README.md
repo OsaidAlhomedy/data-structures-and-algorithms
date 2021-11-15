@@ -32,4 +32,4 @@ To run your tests
 | 28            | Quick Sort                                     | [Merge Sort](./android/quickSort/README.md)                                 |
 | 29            | Hash Tables - Repeated-Word                    | [Repeated-Word](./android/hashTable/README.md)                              |
 | 33            | Hash Tables - hashmap-left-join                | [left-join ](./android/hashTable/README.md)                                 |
-| 35            | Graphs Implementation                          | [Graphs](./android/graphs/README.md)                                        |
+| 35,36         | Graphs Implementations                         | [Graphs](./android/graphs/README.md)                                        |

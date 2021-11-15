@@ -2,9 +2,7 @@ package graph.base;
 
 import graph.data.GraphNode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Graph<T> {
 
@@ -55,5 +53,35 @@ public class Graph<T> {
   public int size() {
     return size;
   }
+
+  public List<T> breadthFirst(T data) {
+
+    GraphNode<T> graphNode = nodes.get(data);
+    if (graphNode == null) {
+      throw new IllegalArgumentException();
+    }
+
+    Set<GraphNode<T>> visited = new HashSet<>();
+    Queue<GraphNode<T>> queue = new LinkedList<>();
+    List<T> printList = new ArrayList<>();
+
+    queue.add(graphNode);
+
+    while (!queue.isEmpty()) {
+      GraphNode<T> current = queue.remove();
+
+      if (visited.contains(current)) {
+        continue;
+      }
+      printList.add(current.getData());
+      visited.add(current);
+
+      for (GraphNode<T> node : adjList.get(current)) {
+        if (!visited.contains(node)) queue.add(node);
+      }
+    }
+    return printList;
+  }
+
 
 }
