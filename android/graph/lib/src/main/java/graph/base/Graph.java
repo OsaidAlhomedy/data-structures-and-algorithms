@@ -128,4 +128,34 @@ public class Graph<T, W> {
   }
 
 
+  public List<T> depthFirst(T data) {
+
+    GraphNode<T, W> graphNode = nodes.get(data);
+    if (graphNode == null) {
+      throw new IllegalArgumentException();
+    }
+    Stack<GraphNode<T, W>> stack = new Stack<>();
+    Set<GraphNode<T, W>> visited = new HashSet<>();
+    List<T> printList = new ArrayList<>();
+
+    stack.push(graphNode);
+
+    while (!stack.isEmpty()) {
+      GraphNode<T, W> current = stack.pop();
+
+      if (visited.contains(current)) {
+        continue;
+      }
+
+      printList.add(current.getData());
+      visited.add(current);
+
+      for (GraphNode<T, W> node : adjList.get(current)) {
+        if (!visited.contains(node)) stack.push(node);
+      }
+    }
+    return printList;
+
+  }
+
 }

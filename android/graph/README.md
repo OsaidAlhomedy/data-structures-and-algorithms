@@ -96,3 +96,34 @@ Space Complexity : O(1)
 To run the function invoke the static method `Graph.businessTrip(Graph , List)` and pass in a graph and the trip list
 
 ---
+
+## Challenge 38
+
+### Challenge Summary
+
+<!-- Description of the challenge -->
+
+Conduct a depth first preorder traversal on a graph
+
+### Whiteboard Process
+
+<!-- Embedded whiteboard image -->
+
+![wb](./lib/src/main/resources/GraphDepthFirstWB.png)
+
+### Approach & Efficiency
+
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+Using some built in collections like the hashmaps and the hashsets , also the queues to get the depth-first nodes list
+
+Time Complexity : O(n)
+Space Complexity : O(n)
+
+### Solution
+
+<!-- Show how to run your code, and examples of it in action -->
+
+to run the code just initialize a new graph and add nodes to it then add edges between the edges then use `graph.depthFirst(node)` and pass in the required node.
+
+---

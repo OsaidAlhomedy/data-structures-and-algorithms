@@ -17,7 +17,7 @@ class LibraryTest {
   @DisplayName("adding nodes testing")
   @Test
   void graphAddNodeTest() {
-    Graph<String,Integer> graph = new Graph<>();
+    Graph<String, Integer> graph = new Graph<>();
 
     // adding new nodes
     graph.addNode("osaid");
@@ -35,7 +35,7 @@ class LibraryTest {
   @DisplayName("adding an edge between 2 nodes")
   @Test
   void graphAddEdgeTest() {
-    Graph<String,Integer> graph = new Graph<>();
+    Graph<String, Integer> graph = new Graph<>();
     graph.addNode("osaid");
     graph.addNode("rahaf");
     // adding edge testing
@@ -51,7 +51,7 @@ class LibraryTest {
   @DisplayName("graph size test")
   @Test
   void graphSize() {
-    Graph<String,Integer> graph = new Graph<>();
+    Graph<String, Integer> graph = new Graph<>();
     // empty graph
     assertEquals(0, graph.size());
 
@@ -66,7 +66,7 @@ class LibraryTest {
   @DisplayName("adding the same node as an edge")
   @Test
   void graphAddEdgeSameNode() {
-    Graph<String,Integer> graph = new Graph<>();
+    Graph<String, Integer> graph = new Graph<>();
     graph.addNode("osaid");
     graph.addNode("rahaf");
     // adding edge testing
@@ -78,7 +78,7 @@ class LibraryTest {
   @DisplayName("empty graph should returns null")
   @Test
   void graphEmptyGraph() {
-    Graph<String,Integer> graph = new Graph<>();
+    Graph<String, Integer> graph = new Graph<>();
     assertNull(graph.getNodes());
 
   }
@@ -87,7 +87,7 @@ class LibraryTest {
   @Test
   void graphBreadthFirst() {
 
-    Graph<String,Integer> graph = new Graph<>();
+    Graph<String, Integer> graph = new Graph<>();
     // adding the nodes
     graph.addNode("osaid");
     graph.addNode("rahaf");
@@ -107,7 +107,7 @@ class LibraryTest {
     assertEquals("[osaid, rahaf, tareq, ammar]", graph.breadthFirst("osaid").toString());
 
     // adding duplicated edge should return the same as above
-    graph.addEdge("ammar","rahaf");
+    graph.addEdge("ammar", "rahaf");
     assertEquals("[osaid, rahaf, tareq, ammar]", graph.breadthFirst("osaid").toString());
 
     // edge cases
@@ -141,14 +141,14 @@ class LibraryTest {
     trip.add("Pandora");
 
     //Happy way
-    assertEquals("True , $82",Graph.businessTrip(graph,trip));
+    assertEquals("True , $82", Graph.businessTrip(graph, trip));
 
 
     // Edge Case
     List<String> trip2 = new ArrayList<>();
     trip2.add("asdasdasd");
     trip2.add("Pandora");
-    assertEquals("Node is not present in the graph",Graph.businessTrip(graph,trip2));
+    assertEquals("Node is not present in the graph", Graph.businessTrip(graph, trip2));
 
     // Long Way
     List<String> trip3 = new ArrayList<>();
@@ -159,9 +159,42 @@ class LibraryTest {
     trip3.add("Arendelle");
     trip3.add("Pandora");
 
-    assertEquals("True , $552",Graph.businessTrip(graph,trip3));
+    assertEquals("True , $552", Graph.businessTrip(graph, trip3));
   }
 
+
+  @DisplayName("returns a list of all the nodes using depth first logic")
+  @Test
+  void graphDepthFirst() {
+
+    Graph<String, Integer> graph = new Graph<>();
+    // adding the nodes
+    graph.addNode("osaid");
+    graph.addNode("rahaf");
+    graph.addNode("mohammad");
+    graph.addNode("tareq");
+    graph.addNode("ammar");
+
+    // ADDING THE EDGES
+
+    //happy path
+    graph.addEdge("osaid", "rahaf");
+    assertEquals("[osaid, rahaf]", graph.breadthFirst("osaid").toString());
+
+    // adding more stuff
+    graph.addEdge("osaid", "tareq");
+    graph.addEdge("tareq", "ammar");
+    graph.addEdge("ammar", "mohammad");
+
+    assertEquals("[osaid, tareq, ammar, mohammad, rahaf]", graph.depthFirst("osaid").toString());
+
+    // adding duplicated edge should return the same as above
+    graph.addEdge("osaid", "tareq");
+    assertEquals("[osaid, tareq, ammar, mohammad, rahaf]", graph.depthFirst("osaid").toString());
+
+    // edge cases
+    assertThrows(IllegalArgumentException.class, () -> graph.depthFirst("nobody"));
+  }
 
 
 }
