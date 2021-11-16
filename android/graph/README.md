@@ -34,7 +34,7 @@ Space Complexity : O(n^2)
 
 # Challenges
 
-## Challenge 36:
+## Challenge 36
 
 ### Challenge Summary
 
@@ -45,6 +45,7 @@ Implement a breadth-first traversal on a graph.
 ### Whiteboard Process
 
 <!-- Embedded whiteboard image -->
+
 ![wb](./lib/src/main/resources/GraphBreadthFirstWB.png)
 
 ### Approach & Efficiency
@@ -62,5 +63,36 @@ Space Complexity : O(n)
 
 to run the code just initialize a new graph and add nodes to it then add edges between the edges
 then use `graph.breadthFirst(node)` and pass in the required node.
+
+---
+
+## Challenge 37
+
+### Challenge Summary
+
+<!-- Description of the challenge -->
+
+Given a graph that represents the map between cities and a list of trip , write a n algorithm that returns the total cost of the trip
+
+### Whiteboard Process
+
+<!-- Embedded whiteboard image -->
+
+![wb](./lib/src/main/resources/GraphBuisnessTripWB.png)
+
+### Approach & Efficiency
+
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+I simply check if the next element in the list is contained in the adjacency list of the current element
+
+Time Complexity : O(n)
+Space Complexity : O(1)
+
+### Solution
+
+<!-- Show how to run your code, and examples of it in action -->
+
+To run the function invoke the static method `Graph.businessTrip(Graph , List)` and pass in a graph and the trip list
 
 ---
